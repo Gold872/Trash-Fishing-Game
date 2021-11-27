@@ -2,7 +2,7 @@
 #include "RenderWindow.hpp"
 
 void Fish::update() {
-	if(!caught) {
+	if(!fishCaught) {
 		setX(getX() + 2);
 	}
 }
@@ -10,5 +10,5 @@ void Fish::update() {
 Fish::Fish() : Entity(0, 0, nullptr) {
 	setX(0);
 	setY(0);
-	caught = false;
+	fishCaught = false;
 }

@@ -10,19 +10,19 @@ public:
 	void update();
 
 	void setCaught(bool val) {
-		caught = val;
+		fishCaught = val;
 	}
 	void setDone(bool val) {
-		done = val;
+		fishDone = val;
 	}
 	bool isCaught() {
-		return caught;
+		return fishCaught;
 	}
 	bool isDone() {
-		return done;
+		return fishDone;
 	}
 
 private:
-	bool caught;
-	bool done; //If it's been caught and taken out of the water
+	bool fishCaught;
+	bool fishDone; //If it's been caught and taken out of the water
 };
