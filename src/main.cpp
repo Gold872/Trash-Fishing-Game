@@ -1,12 +1,11 @@
 #include "Game.hpp"
 #include <SDL2/SDL.h>
 
-Game game(20, 40);
+Game game(20, 20);
 
 int main(int argc, char **argv) {
 
-	game.initialize();
-	game.spawnEntities();
+	game.loadMenu();
 
 	while (game.isRunning()) {
 		game.mainLoop();

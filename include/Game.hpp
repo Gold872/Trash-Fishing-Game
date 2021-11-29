@@ -10,12 +10,15 @@ public:
 	Game(int fishCount, int trashCount);
 	bool isRunning();
 	void checkInput();
+	void checkCompleted();
 	void updateFPS();
 	void draw();
 	void mainLoop();
-	void initialize();
+	void loadGame();
+	void loadMenu();
 	void spawnEntities();
-	void Quit();
+	void restart();
+	void quit();
 	int getFishCount() {
 		return fishCount;
 	}
@@ -25,8 +28,13 @@ public:
 	enum gameState {
 		MENU, GAME
 	};
+	gameState state = MENU;
+	void setState(gameState state) {
+		this->state = state;
+	}
 private:
 	bool running;
 	int fishCount, trashCount;
+	int N_FISH_DONE = 0, N_TRASH_DONE = 0;
 	int lastFrame, lastTime, frameCount, fps, timerFPS;
 };
