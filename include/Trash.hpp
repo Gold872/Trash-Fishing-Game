@@ -4,8 +4,7 @@
 
 class Trash: public Entity {
 public:
-	Trash();
-	~Trash() = default;
+	Trash();;
 
 	void update();
 

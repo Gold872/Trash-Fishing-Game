@@ -5,7 +5,6 @@
 class Hook: public Entity {
 public:
 	Hook(int w, int h);
-	~Hook() = default;
 	int getHookHeight() {
 		return hook_height;
 	}

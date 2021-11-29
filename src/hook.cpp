@@ -6,7 +6,7 @@ void Hook::setHooked(bool val) {
 bool Hook::isHooked() {
 	return hooked;
 }
-Hook::Hook(int w, int h) : Entity(0, 0, nullptr) {
+Hook::Hook(int w, int h) : Entity(0, 0, 550, 550) {
 	setX(0);
 	setY(0);
 	this->hook_width = w;

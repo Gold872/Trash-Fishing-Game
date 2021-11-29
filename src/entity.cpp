@@ -1,11 +1,11 @@
 #include <Entity.hpp>
 #include <iostream>
 
-Entity::Entity(float x, float y, SDL_Texture *texture) {
-	frame.x = 0;
-	frame.y = 0;
-	frame.w = 550;
-	frame.h = 550;
+Entity::Entity(float x, float y, float w, float h) {
+	frame.x = x;
+	frame.y = y;
+	frame.w = w;
+	frame.h = h;
 }
 
 float Entity::getX() {

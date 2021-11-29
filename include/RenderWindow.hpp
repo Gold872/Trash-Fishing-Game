@@ -9,7 +9,7 @@ public:
 
 	SDL_Texture* loadTexture(const char *filePath);
 	void clear();
-	void fillScreen();
+	void fillScreen(int r, int g, int b);
 	void render(Entity &entity, int w, int h);
 	void display();
 	SDL_Renderer* getRenderer() {

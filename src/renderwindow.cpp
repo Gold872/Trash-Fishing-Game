@@ -14,13 +14,11 @@ SDL_Texture* RenderWindow::loadTexture(const char *filePath) {
 	SDL_Surface *surface = nullptr;
 	SDL_Texture *texture = nullptr;
 	surface = SDL_LoadBMP(filePath);
-	Uint32 colorkey = SDL_MapRGB(surface->format, 255, 255, 255);
-	SDL_SetColorKey(surface, SDL_TRUE, colorkey);
 	texture = SDL_CreateTextureFromSurface(renderer, surface);
 	SDL_FreeSurface(surface);
 
 	if (texture == nullptr) {
-		std::cout << "Error loading texture: " << SDL_GetError();
+		std::cout << "Error loading texture: " << SDL_GetError() << "\n" << std::flush;
 	}
 
 	return texture;
@@ -31,14 +29,14 @@ void RenderWindow::clear() {
 	SDL_RenderClear(renderer);
 }
 
-void RenderWindow::fillScreen() {
+void RenderWindow::fillScreen(int r, int g, int b) {
 	SDL_Rect tempRect;
 	tempRect.x = 0;
 	tempRect.y = 0;
 	tempRect.w = 550;
 	tempRect.h = 550;
 
-	SDL_SetRenderDrawColor(renderer, 184, 253, 255, 255);
+	SDL_SetRenderDrawColor(renderer, r, g, b, 255);
 	SDL_RenderFillRect(renderer, &tempRect);
 }
 

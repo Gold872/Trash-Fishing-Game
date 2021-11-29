@@ -1,10 +1,18 @@
 #pragma once
 
 #include <SDL2/SDL.h>
+#include <iostream>
 
 class Entity {
 public:
-	Entity(float x, float y, SDL_Texture *texture);
+
+	Entity(float x, float y, float w, float h);
+	~Entity() {
+		if (texture != nullptr) {
+			SDL_DestroyTexture(texture);
+//			std::cout << "Error: " << SDL_GetError() << ": " << texture <<std::endl;
+		}
+	}
 	void setX(int x) {
 		this->x = x;
 	}

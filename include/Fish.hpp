@@ -5,7 +5,6 @@
 class Fish: public Entity {
 public:
 	Fish();
-	~Fish() = default;
 
 	void update();
 
